@@ -2,10 +2,13 @@ import os
 from Bio import Entrez
 
 def NCBI_downloader(query_ls, folder):
-
+    ''' 
+    query_ls: a list of NM_ transcript IDs 
+    folder: a string to specify the target folder to download
+    Download the genbank files by NM_ transcript IDs to target folder   
+    '''
     Entrez.email = "d0789100@gmail.com"  # Always tell NCBI who you are
     files = [file for file in os.listdir(folder)]
-    
     
     for NM_ in query_ls: 
         file = NM_ + '.gb'

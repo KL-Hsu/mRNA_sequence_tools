@@ -19,7 +19,11 @@ def position_of_codon(transcript, stop=True):
 
 
 def retrieve_seq_from_ensemble(ID, mutation_pos, save_length_nt=150):
-    
+    '''
+    ID: (string)Ensembl transcript ID, mutation_pos: (string) c.1452T>C
+    save_length_nt: default 150 nt
+    Extract sequneces from Ensembl by given mutations
+    '''
     n = save_length_nt//3
     mut_pos = int(mutation_pos.split('>')[0].split('.')[1][:-1]) 
     old_nt = mutation_pos[-3]

@@ -23,6 +23,7 @@ def retrieve_seq_from_ensemble(ID, mutation_pos, save_length_nt=150):
     ID: (string)Ensembl transcript ID, mutation_pos: (string) c.1452T>C
     save_length_nt: default 150 nt
     Extract sequneces from Ensembl by given mutations
+    Error code: No transcript, No cds!, Mismatch stop codon, No stop codon in readthrough 
     '''
     n = save_length_nt//3
     mut_pos = int(mutation_pos.split('>')[0].split('.')[1][:-1]) 

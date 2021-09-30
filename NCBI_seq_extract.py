@@ -10,6 +10,7 @@ def retrieve_seq(NM_, mutation_pos=None, folder="snp_downloaded/", save_length_n
     folder:(str)from which folder 
     save_length_nt:(int) length for extracting the sequence
     Extract sequence from genbank file
+    Error code: 'error', 'Mismatch stop codon', 'No stop codon in readthrough'
     '''
     
     n = save_length_nt//3

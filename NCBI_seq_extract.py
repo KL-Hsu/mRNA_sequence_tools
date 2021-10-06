@@ -77,3 +77,23 @@ def retrieve_seq(NM_, mutation_pos=None, folder="snp_downloaded/", save_length_n
         return str(save_normal), str(save_normal_p), str(save_readthrough), str(save_readthrough_p)
     except:
         return error
+
+def extract_coding_seq(NM_, folder="snp_downloaded/"): 
+
+    filename = folder + NM_ + '.gb'
+    record = SeqIO.read(filename, "gb")
+        
+    for feature in record.features: #Coding region
+        if feature.type == "CDS":
+            location = feature.location
+    start = int(location.start)
+    end = int(location.end)
+    error = 'error'
+
+    try: 
+        normal = record.seq[start:end] #mRNA coding seq include stop codon 
+        normal_p = normal.translate()
+
+        return str(normal), str(normal_p)
+    except:
+        return error

@@ -91,3 +91,21 @@ def retrieve_normal_seq_from_ensemble(ID, save_length_nt=150):
 
     except:
         return error
+
+def retrieve_coding_from_ensemble(ID):
+
+    error = "No transcript"
+    try:
+        transcript = genome.transcript_by_id(ID)
+        try:
+            mRNA_cds = transcript.coding_sequence
+        except:
+            error = "No cds!"
+            raise KeyError     
+
+        protein_cds = Seq(mRNA_cds).translate()
+
+        return str(mRNA_cds), str(protein_cds)
+
+    except:
+        return error

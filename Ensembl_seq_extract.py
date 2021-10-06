@@ -92,7 +92,7 @@ def retrieve_normal_seq_from_ensemble(ID, save_length_nt=150):
     except:
         return error
 
-def retrieve_coding_from_ensemble(ID):
+def retrieve_coding_seq_from_ensemble(ID):
 
     error = "No transcript"
     try:

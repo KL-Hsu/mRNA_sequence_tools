@@ -7,7 +7,7 @@ def NCBI_esearch(db="nucleotide", term="(RAD1[Gene Name]) AND Human[Organism]"):
     Searching by keywords and return a record
     '''
 
-    Entrez.email = "d0789100@gmail.com"  # Always tell NCBI who you are
+    Entrez.email = "your_email_address"  # Always tell NCBI who you are
 
     # Downloading...
     handle = Entrez.esearch(db=db, term=term, retmax=10, idtype='acc')
